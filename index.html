@@ -3,117 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>~*~My Awesome 2000s Page~*~</title>
+    <title>::: Your Awesome Homepage Title :::</title>
+
+    <!-- Import Segoe UI for a Frutiger Aero feel in headings/buttons -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-        /* CSS to get that early 2000s look! */
+        /* Base styles from your original file */
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            background-color: #000; /* Dark background from your original */
+        }
+
         body {
-            font-family: 'Comic Sans MS', 'Arial', sans-serif;
-            background-color: #CCCCFF; /* A popular pastel purple/blue */
-            color: #333333;
-            margin: 0;
+            font-family: 'Times New Roman', serif; /* Keeping your preferred body font */
+            color: #fff;
+            max-width: 960px; /* Slightly wider for Aero spaciousness */
+            margin: 0 auto;
             padding: 20px;
+            min-height: 100vh;
+            display: flex; /* Use flexbox for overall layout */
+            flex-direction: column;
+            justify-content: center; /* Center content vertically if space allows */
+            align-items: center; /* Center content horizontally */
+        }
+
+        a {
+            color: #88CCFF; /* A more Aero-friendly blue for links */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #CCEEFF;
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            image-rendering: pixelated; /* Keeping your pixelated image rendering */
+            border-radius: 8px; /* Slightly rounded corners for images */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for images */
+        }
+
+        /* Main container styling for Frutiger Aero */
+        #container {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Subtle translucent dark background */
+            border-radius: 25px; /* Rounded corners */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Light border for glass effect */
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+            backdrop-filter: blur(12px); /* The key glass effect! */
+            -webkit-backdrop-filter: blur(12px); /* For Safari compatibility */
+            overflow: hidden; /* Ensures rounded corners clip content */
+        }
+
+        /* Headers with Aero style */
+        h1, h2 {
+            font-family: 'Segoe UI', sans-serif; /* Segoe UI for headings */
+            color: #CCEEFF; /* Lighter, more vibrant blue for headings */
+            font-size: 2.5em; /* Adjusted size */
+            text-shadow: 0 0 15px rgba(100, 200, 255, 0.7), 0 0 5px rgba(255, 255, 255, 0.5); /* Glowing text shadow */
+            margin-bottom: 20px;
             text-align: center;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #FFFFFF;
-            border: 5px solid #FF66CC; /* Bright pink border */
-            padding: 20px;
-            box-shadow: 10px 10px 5px #AAAAAA; /* A classic drop shadow! */
+        h1.dashed {
+            border-style: dashed;
+            border-color: #88CCFF; /* Aero blue dashed border */
+            padding: 10px;
         }
 
-        h1 {
-            color: #FF00FF; /* Bright magenta */
-            font-size: 3em;
-            text-shadow: 2px 2px #FFFF00; /* Yellow text shadow! */
-            font-style: italic;
-        }
-
+        /* Marquee for early 2000s feel */
         .marquee-text {
-            color: #0000FF; /* Bright blue */
+            font-family: 'Comic Sans MS', cursive; /* Classic Comic Sans for marquee */
+            color: #FF66CC; /* Bright pink */
             font-weight: bold;
             font-size: 1.5em;
             margin-bottom: 20px;
+            text-shadow: 1px 1px 2px #FFFF00; /* Yellow shadow */
+            white-space: nowrap; /* Ensure it stays on one line */
         }
 
-        .navigation {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+        /* Table layout styling (from your original) */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Remove space between cells */
+            margin-top: 20px;
         }
 
-        .navigation a {
-            text-decoration: none;
-            color: #FFFFFF;
-            background-color: #FF9900; /* Bright orange buttons */
+        tr > *:first-child,
+        tr > *:last-child {
+            width: 20%;
+            vertical-align: top; /* Align content to top */
+            padding: 10px;
+        }
+
+        tr > *:nth-child(2) {
+            width: 60%;
+            vertical-align: top;
+            padding: 10px;
+        }
+
+        /* Left sidebar links - Aero button style */
+        #left p a {
+            display: block; /* Make links block-level for full button effect */
+            background: rgba(255, 255, 255, 0.15); /* Translucent background */
+            color: #CCEEFF; /* Light blue text */
             padding: 10px 15px;
-            border: 2px solid #FFCC00; /* Yellow border */
-            border-radius: 15px;
+            margin-bottom: 8px; /* Space between buttons */
+            border-radius: 20px; /* Rounded pill shape */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2), 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-family: 'Segoe UI', sans-serif;
             font-weight: bold;
-            transition: transform 0.2s;
+            transition: all 0.3s ease;
+            text-align: center;
         }
 
-        .navigation a:hover {
-            transform: scale(1.1); /* Animate it! */
-            background-color: #FFCC00;
-            color: #FF9900;
+        #left p a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px); /* Subtle lift */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), inset 0 1px 5px rgba(255, 255, 255, 0.2);
+            color: #FFFFFF;
         }
 
-        img.animated-gif {
-            width: 100px;
-            height: auto;
-            margin: 10px;
-            filter: drop-shadow(5px 5px 2px #000000); /* Drop shadow on the image */
+        /* Right sidebar text */
+        #right {
+            font-size: 0.9em;
+            color: #AAAAAA; /* Slightly lighter text for readability on dark */
         }
 
-        .footer {
-            margin-top: 30px;
-            font-size: 0.8em;
-            font-style: italic;
-            color: #666666;
+        #right a {
+            color: #88CCFF; /* Consistent link color */
         }
 
+        /* Footer image */
+        .footer-gif {
+            margin-top: 20px;
+            border-radius: 0; /* Keep original GIF look */
+            box-shadow: none; /* No shadow for GIFs unless specified */
+            image-rendering: auto; /* Allow GIFs to render smoothly */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .marquee-text {
+                font-size: 1.2em;
+            }
+            table, tbody, tr, td {
+                display: block; /* Stack table cells on small screens */
+                width: 100% !important; /* Override width percentages */
+            }
+            #left, #right {
+                margin-bottom: 20px; /* Add space between stacked sections */
+            }
+            #left p a {
+                margin-bottom: 5px; /* Less space for stacked buttons */
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <marquee class="marquee-text" scrollamount="10">
-            Welcome to my personal homepage! You are visitor number...
+    <header>
+        <center>
+            <p>
+                <!-- CUSTOMIZE: Replace 'https://placehold.co/200x80/000000/FFFFFF?text=Your+Logo' with your logo image path (e.g., 'img/your_logo.png') -->
+                <a href="index.html">
+                    <img src="https://placehold.co/200x80/000000/FFFFFF?text=Your+Logo"
+                         alt="Your Website Logo"
+                         onerror="this.onerror=null;this.src='https://placehold.co/200x80/000000/FFFFFF?text=Your+Logo';">
+                </a>
+            </p>
+        </center>
+    </header>
+
+    <div id="container">
+        <!-- CUSTOMIZE: Change the text in the marquee below -->
+        <marquee class="marquee-text" scrollamount="8">
+            Welcome to my awesome webpage! This site is optimized for your viewing pleasure!
         </marquee>
-        
-        <h1>Welcome to My Totally Awesome Homepage!</h1>
 
-        <ul class="navigation">
-            <li><a href="#">About Me</a></li>
-            <li><a href="#">My Friends</a></li>
-            <li><a href="#">Photo Gallery</a></li>
-            <li><a href="#">Links</a></li>
-        </ul>
+        <center>
+            <!-- CUSTOMIZE: Change the main heading below -->
+            <h1>Welcome to My Official Homepage!</h1>
+        </center>
 
-        <p>
-            Hey there! Thanks for stopping by. This site is currently under construction.
-            Feel free to look around, but be careful of the dancing baby!
-        </p>
+        <table style="width:100%">
+            <tr>
+                <td id="top"> </td>
+            </tr>
+        </table>
 
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWQ4NDcwYzRjN2QzYjU1ZTA4MWI2MTliNDk1MDBkZGVlOTNiZWVhNyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/sI8FhE9U8L48Y/giphy.gif" alt="Dancing Baby GIF" class="animated-gif">
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmQxMmZiODU2MTg3YjhmMzY0MDYwMDk0NjY1YWRmOGI3YzYwYjY5NyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/kig66V9R181a9x0eP2/giphy.gif" alt="Construction GIF" class="animated-gif">
-        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmRiNTVhZTRjMWI3ZDUwNjc1YTU5MzAxOGIzY2M0Y2Q2OWRjZDJmZiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/122YF2GkP096yI/giphy.gif" alt="Sparkles GIF" class="animated-gif">
+        <div id="tilly1"></div>
+        <div id="tilly2"></div>
 
-        <p>
-            Check back soon for more updates!
-        </p>
-        
-        <div class="footer">
-            &copy; 2005 My Awesome Page. All rights reserved.
-            <br>
-            Best viewed in Internet Explorer 6 at 800x600 resolution.
-        </div>
+        <table style="width:100%">
+            <tr>
+                <td id="left">
+                    <br>
+                    <!-- CUSTOMIZE: Change the sidebar title below -->
+                    <p style="font-family: 'Segoe UI', sans-serif; font-weight: bold; color: #CCEEFF; text-shadow: 0 0 5px rgba(100, 200, 255, 0.5);">
+                        Quick Links
+                    </p>
+
+                    <!-- CUSTOMIZE: Change the text and 'href' for each link below -->
+                    <p><a href="index.html"> Home </a></p>
+                    <p><a href="about.html"> About Me </a></p>
+                    <p><a href="downloads.html"> Downloads </a></p>
+                    <p><a href="resources.html"> Resources </a></p>
+                    <p><a href="wiki.html"> My Wiki </a></p>
+                    <p><a href="faq.html"> FAQ </a></p>
+                    <p><a href="gallery.html"> Gallery </a></p>
+                </td>
+
+                <td>
+                    <center>
+                        <br>
+                        <!-- CUSTOMIZE: Replace the GIF with your own! -->
+                        <!-- Example: 'img/your_gif.gif' or a new Giphy URL -->
+                        <a href="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWQ4NDcwYzRjN2QzYjU1ZTA4MWI2MTliNDk1MDBkZGVlOTNiZWVhNyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/sI8FhE9U8L48Y/giphy.gif">
+                            <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWQ4NDcwYzRjN2QzYjU1ZTA4MWI2MTliNDk1MDBkZGVlOTNiZWVhNyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/sI8FhE9U8L48Y/giphy.gif"
+                                 alt="Main Content GIF"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/300x200/000000/FFFFFF?text=Your+GIF+Here';">
+                        </a>
+
+                        <!-- CUSTOMIZE: Change the sub-heading below -->
+                        <h2>So, about this page... heh!</h2>
+                        <br>
+
+                        <!-- CUSTOMIZE: Modify the main content paragraphs below -->
+                        <p>This is where you can write all about your interests, projects, or anything you'd like to share!</p>
+                        <p>Feel free to add more paragraphs, images, or even videos to make your page unique.</p>
+                        <p>Remember to keep it fun and engaging for your visitors!</p>
+
+                    </center>
+                </td>
+
+                <td id="right">
+                    <br>
+                    <!-- CUSTOMIZE: Change the sidebar title below -->
+                    <p style="font-family: 'Segoe UI', sans-serif; font-weight: bold; color: #CCEEFF; text-shadow: 0 0 5px rgba(100, 200, 255, 0.5);">
+                        More Cool Stuff!
+                    </p>
+
+                    <!-- CUSTOMIZE: Replace image sources and links for your social media/other sites -->
+                    <p>
+                        <a href="https://www.youtube.com/yourchannel">
+                            <img src="https://placehold.co/80x80/FF0000/FFFFFF?text=YouTube"
+                                 alt="YouTube Icon"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/80x80/FF0000/FFFFFF?text=YouTube';">
+                        </a>
+                    </p>
+                    <p>
+                        <a href="http://yourdiscord.com">
+                            <img src="https://placehold.co/80x80/7289DA/FFFFFF?text=Discord"
+                                 alt="Discord Icon"
+                                 onerror="this.onerror=null;this.src='https://placehold.co/80x80/7289DA/FFFFFF?text=Discord';">
+                        </a>
+                    </p>
+
+                    <!-- CUSTOMIZE: Update the designer/helper credits -->
+                    <p style="font-size:12px; color:rgb(146, 146, 146);">Designed by <a
+                            href="https://www.twitter.com/YourTwitter"> @YourName</a></p>
+                    <p style="font-size:12px; color:rgb(146, 146, 146);">Big thanks and shoutouts to <a
+                            href="https://www.twitter.com/HelperTwitter"> @YourHelper</a> for helping me make this!! </p>
+                </td>
+
+            </tr>
+        </table>
+
+        <table style="width:100%">
+            <tr>
+                <td id="bottom" class="row"> </td>
+            </tr>
+        </table>
+
+        <center>
+            <p>
+                <!-- CUSTOMIZE: Replace the GIF with your own 'under construction' or other footer GIF -->
+                <a href="http://yourwebsite.com">
+                    <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExYmQxMmZiODU2MTg3YjhmMzY0MDYwMDk0NjY1YWRmOGI3YzYwYjY5NyZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/kig66V9R181a9x0eP2/giphy.gif"
+                         alt="Under Construction GIF" class="footer-gif"
+                         onerror="this.onerror=null;this.src='https://placehold.co/100x100/000000/FFFFFF?text=Under+Construction';">
+                </a>
+            </p>
+        </center>
+
     </div>
 
 </body>
